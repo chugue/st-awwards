@@ -15,6 +15,7 @@ const Hero = () => {
 
   const totalVideos = 4;
   const nextVideodRef = useRef(null);
+
   const handleVideoLoaded = () => {
     setLoadedVideos((prev) => prev + 1);
   };
@@ -26,6 +27,9 @@ const Hero = () => {
   };
 
   useEffect(() => {
+    console.log("loadedVideos: ", loadedVideos);
+    console.log("totalVideos: ", totalVideos);
+    // 초기 로드시에는 3개의 비디오만 로드됨
     if (loadedVideos === totalVideos - 1) {
       setIsLoading(false);
     }
@@ -117,6 +121,7 @@ const Hero = () => {
             muted
             id="next-video"
             className="absolute-center invisible absolute z-20 size-64 obejct-cover object-center"
+            onLoadedData={handleVideoLoaded}
           />
           <video
             src={getVideoSrc(
