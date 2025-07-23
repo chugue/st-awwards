@@ -1,10 +1,13 @@
-import Hero from "./components/Hero.jsx";
+import Hero from "./components/Hero";
+import About from "./components/About";
 
-const App = () => (
-  <main className="relative min-h-screen w-screen overflow-x-hidden">
-    <Hero />
-    <section className="z-0 min-h-screen bg-blue-500"></section>
-  </main>
-);
+const App = () => {
+  return (
+    <main className="relative min-h-screen w-screen overflow-x-hidden">
+      <Hero />
+      <About />
+    </main>
+  );
+};
 
 export default App;
