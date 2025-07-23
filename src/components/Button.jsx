@@ -1,6 +1,10 @@
-import React from "react";
-
-const Button = ({ title, id, rightIcon, leftIcon, containerClass }) => {
+const Button = ({
+  title,
+  id,
+  rightIcon = null,
+  leftIcon = null,
+  containerClass,
+}) => {
   return (
     <button
       id={id}
