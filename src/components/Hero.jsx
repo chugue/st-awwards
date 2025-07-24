@@ -27,9 +27,6 @@ const Hero = () => {
   };
 
   useEffect(() => {
-    console.log("loadedVideos: ", loadedVideos);
-    console.log("totalVideos: ", totalVideos);
-    // 초기 로드시에는 3개의 비디오만 로드됨
     if (loadedVideos === totalVideos - 1) {
       setIsLoading(false);
     }
@@ -83,7 +80,7 @@ const Hero = () => {
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
 
   return (
-    <div className="relative h-dvh w-screen overflow-x-hidden">
+    <div className="relative h-dvh w-screen overflow-x-hidden" id="nexus">
       {isLoading && (
         <div className="flex-center absolute z-[100] h-dvh w-screen overflow-hidden">
           <div className="three-body">
@@ -127,7 +124,7 @@ const Hero = () => {
             src={getVideoSrc(
               currentIndex === totalVideos - 1 ? 1 : currentIndex
             )}
-            // autoPlay
+            autoPlay
             loop
             muted
             className="absolute left-0 top-0 w-full h-dvh object-cover object-center scale-110"
